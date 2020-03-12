@@ -12,12 +12,12 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water Bill' }));
-store.dispatch(addExpense({ description: 'Gas Bill' }));
+store.dispatch(addExpense({ description: 'Water Bill', amount: 4500 }));
+store.dispatch(addExpense({ description: 'Gas Bill', amount: 9500}));
 store.dispatch(setTextFilter('water'));
 
 setTimeout(() => {
-    store.dispatch(setTextFilter('Rent'));
+    store.dispatch(setTextFilter('Bill'));
 }, 3000)
 
 const state = store.getState();
